@@ -13,8 +13,10 @@ cc_binary(
 
 cc_library(
     name = "common_component_example_lib",
-    srcs = ["common_component_example.cc"],
-    hdrs = ["common_component_example.h"],
+    srcs = ["common_component_example.cc",
+            "common_prediction_component_example.cc"],
+    hdrs = ["common_component_example.h",
+            "common_prediction_component_example.h"],
     visibility = ["//visibility:private"],
     deps = [
         "//cyber",
