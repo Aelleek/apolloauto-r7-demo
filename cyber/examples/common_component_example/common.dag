@@ -6,11 +6,17 @@
         config {
             name : "common"
             readers {
-                channel: "/apollo/prediction"
-            }
-            readers {
                 channel: "/apollo/test"
             }
         }
       }
+    components {
+        class_name : "CommonPredictionComponentSample"
+        config {
+            name : "commonprediction"
+            readers {
+                channel: "/apollo/prediction"
+            }
+        }
     }
+}

@@ -15,14 +15,24 @@
  *****************************************************************************/
 #include "cyber/examples/common_component_example/common_component_example.h"
 
+using apollo::cyber::examples::proto::Driver;
+
 bool CommonComponentSample::Init() {
   AINFO << "Commontest component init";
+  prediction_writer_ = this->node_->CreateWriter<Driver>("/apollo/prediction");
   return true;
 }
 
-bool CommonComponentSample::Proc(const std::shared_ptr<Driver>& msg0,
-                                 const std::shared_ptr<Driver>& msg1) {
-  AINFO << "Start common component Proc [" << msg0->msg_id() << "] ["
-        << msg1->msg_id() << "]";
+bool CommonComponentSample::Proc(const std::shared_ptr<Driver>& msg0) {
+  AINFO << "Start common component Proc [" << msg0->msg_id() << "]" ;
+
+  Driver out;
+  out.set_msg_id(msg0->msg_id());
+  out.set_timestamp(msg0->timestamp());
+  out.set_content("from common_component, src_msgg_id=" + std::to_string(msg0->msg_id()));
+
+  prediction_writer_->Write(out);
+
+  AINFO << "Publish /apoollo/prediction msg_id = " << out.msg_id();
   return true;
 }
