@@ -17,6 +17,7 @@
 
 #include "cyber/component/component.h"
 #include "cyber/examples/proto/examples.pb.h"
+#include "modules/perception/proto/perception_obstacle.pb.h"
 
 using apollo::cyber::Component;
 using apollo::cyber::ComponentBase;
@@ -29,5 +30,6 @@ class CommonComponentSample : public Component<Driver> {
 
  private:
   std::shared_ptr<apollo::cyber::Writer<Driver>> prediction_writer_;
+  std::shared_ptr<apollo::cyber::Writer<apollo::perception::PerceptionObstacles>> perception_writer_;
 };
 CYBER_REGISTER_COMPONENT(CommonComponentSample)

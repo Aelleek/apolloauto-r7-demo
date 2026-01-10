@@ -21,6 +21,7 @@ cc_library(
     deps = [
         "//cyber",
         "//cyber/examples/proto:examples_cc_proto",
+        "//modules/perception/proto:perception_obstacle_cc_proto",
     ],
 )
 
