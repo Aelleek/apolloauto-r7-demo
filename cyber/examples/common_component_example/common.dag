@@ -19,4 +19,13 @@
             }
         }
     }
+    components {
+        class_name : "CommonPerceptionComponentSample"
+        config {
+            name : "commonperception"
+            readers {
+                channel: "/apollo/perception/obstacles"
+            }
+        }
+    }
 }
