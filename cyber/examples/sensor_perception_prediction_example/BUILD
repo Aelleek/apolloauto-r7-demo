@@ -42,6 +42,25 @@ cc_binary(
     deps = [":demo_prediction_component_lib"],
 )
 
+# Perception Logger Component .so
+cc_library(
+    name = "demo_perception_logger_component_lib",
+    srcs = ["demo_perception_logger_component.cc"],
+    hdrs = ["demo_perception_logger_component.h"],
+    deps = [
+        "//cyber",
+        "//modules/perception/proto:perception_obstacle_cc_proto",
+    ],
+)
+
+cc_binary(
+    name = "libdemo_perception_logger_component.so",
+    linkshared = True,
+    linkstatic = False,
+    deps = [":demo_perception_logger_component_lib"],
+)
+
+
 cc_binary(
     name = "sensor_writer",
     srcs = ["sensor_writer.cc"],
