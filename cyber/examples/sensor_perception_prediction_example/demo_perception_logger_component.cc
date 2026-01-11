@@ -14,6 +14,8 @@ bool DemoPerceptionLogger::Proc(const std::shared_ptr<apollo::perception::Percep
         return false;
     }
 
+    std::this_thread::sleep_for(std::chrono::milliseconds(200));
+
     AINFO << "[logger] module=" << msg0->header().module_name()
         << " ts=" << msg0->header().timestamp_sec()
         << " obstacle_size=" << msg0->perception_obstacle_size();
