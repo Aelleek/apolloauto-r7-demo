@@ -1,0 +1,26 @@
+# Define all coms in DAG streaming.
+module_config {
+    module_library : "/apollo/bazel-bin/cyber/examples/sensor_perception_prediction_example/libdemo_perception_component.so"
+    components {
+        class_name : "DemoPerceptionComponent"
+        config {
+            name : "demo_perception"
+            readers {
+                channel : "/demo/sensor/driver"
+            }
+        }
+    }
+}
+
+module_config{
+    module_library : "/apollo/bazel-bin/cyber/examples/sensor_perception_prediction_example/libdemo_prediction_component.so"
+    components {
+        class_name : "DemoPredictionComponent"
+        config {
+            name : "demo_prediction"
+            readers {
+                channel : "/demo/perception/obstacles"
+            }
+        }
+    }
+}

@@ -1,0 +1,7 @@
+<cyber>
+    <module>
+        <name>demo</name>
+        <dag_conf>/apollo/cyber/examples/sensor_perception_prediction_example/demo.dag</dag_conf>
+        <process_name>demo</process_name>
+    </module>
+</cyber>
