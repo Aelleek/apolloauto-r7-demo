@@ -1,6 +1,6 @@
 # Define all coms in DAG streaming.
 module_config {
-    module_library: "/apollo/bazel-bin/cyber/examples/sensor_perception_prediction_example/libdemo_perception_component.so"
+    module_library: "/apollo/bazel-bin/cyber/examples/demo_apollo_example/demo_perception/libdemo_perception_component.so"
     components {
         class_name: "DemoPerceptionComponent"
         config {
@@ -13,7 +13,7 @@ module_config {
 }
 
 module_config{
-    module_library: "/apollo/bazel-bin/cyber/examples/sensor_perception_prediction_example/libdemo_prediction_component.so"
+    module_library: "/apollo/bazel-bin/cyber/examples/demo_apollo_example/demo_prediction/libdemo_prediction_component.so"
     components {
         class_name: "DemoPredictionComponent"
         config {
@@ -26,7 +26,7 @@ module_config{
 }
 
 module_config{
-    module_library : "/apollo/bazel-bin/cyber/examples/sensor_perception_prediction_example/libdemo_perception_logger_component.so"
+    module_library : "/apollo/bazel-bin/cyber/examples/demo_apollo_example/demo_tools/libdemo_perception_logger_component.so"
     components {
         class_name: "DemoPerceptionLogger"
         config {

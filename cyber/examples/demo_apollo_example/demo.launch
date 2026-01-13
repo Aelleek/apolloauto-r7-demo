@@ -1,7 +1,7 @@
 <cyber>
     <module>
         <name>demo</name>
-        <dag_conf>/apollo/cyber/examples/sensor_perception_prediction_example/demo.dag</dag_conf>
+        <dag_conf>/apollo/cyber/examples/demo_apollo_example/demo_dag/demo_pipeline.dag</dag_conf>
         <process_name>demo</process_name>
     </module>
 </cyber>
